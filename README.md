@@ -3,7 +3,7 @@
 ###  Arquitectura elegida
 Arquitectura cliente-servidor
 
-![Arquitectura cliente-servidor](./static/img/SPA.png)
+![Arquitectura cliente-servidor](static/img/SPA.png)
 
 ---
 
