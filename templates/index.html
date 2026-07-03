@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Puro - Tienda Natural</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+  <!-- Franja superior con logo -->
+  <header class="header">
+    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Puro" class="logo">
+  </header>
+
+  <!-- Layout principal -->
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <!-- Botón Carrito (solo ícono) -->
+      <button id="btnCarrito" class="nav-btn">
+        <img src="{{ url_for('static', filename='img/carrito.png') }}" alt="Carrito">
+      </button>
+
+      <!-- Botón inicio -->
+      <button id="btnTodo" class="nav-btn activo">Inicio</button>
+
+      <!-- Botón Productos -->
+      <button id="btnFiltro" class="nav-btn">Productos</button>
+
+      <!-- Categorías (se despliegan al tocar Filtro) -->
+      <div id="categorias" class="categorias oculto">
+        <button class="cat-btn" data-cat="Jabones">Jabones</button>
+        <button class="cat-btn" data-cat="Shampoo/Acondicionador">Shampoo/Acondicionador</button>
+        <button class="cat-btn" data-cat="Cremas">Cremas</button>
+        <button class="cat-btn" data-cat="Bálsamos">Bálsamos</button>
+      </div>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="contenido">
+      <!-- Grilla de productos (12 en total, 4x3) -->
+      <div id="productos" class="productos">
+        <!-- Ejemplo de producto -->
+        <div class="producto">
+          <div class="producto-top">
+            <img src="{{ url_for('static', filename='img/producto1.png') }}" alt="Producto 1">
+            <h3>Nombre Producto</h3>
+            <p>$5000</p>
+          </div>
+          <div class="producto-bottom">
+            <button class="add-btn" data-id="1">
+              <img src="{{ url_for('static', filename='img/carrito.png') }}" alt="Agregar al carrito">
+            </button>
+          </div>
+        </div>
+        <!-- Repite esta estructura hasta tener los 12 productos -->
+      </div>
+
+      <!-- Sección Carrito -->
+      <div id="carrito" class="carrito oculto">
+        <table>
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody id="carrito-body">
+            <!-- Filas dinámicas -->
+          </tbody>
+        </table>
+
+        <div class="carrito-footer">
+          <button id="borrarTodo">Borrar Todo</button>
+          <h3 id="total">Total: $0</h3>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- JS -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
