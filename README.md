@@ -5,6 +5,7 @@ Arquitectura cliente-servidor
 
 ![Arquitectura cliente-servidor](static/img/SPA.png)
 
+
 ---
 
 ### Tecnologías utilizadas
